@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.thymeleaf.model.IAttribute;
 
 import javax.management.InvalidAttributeValueException;
@@ -26,12 +27,12 @@ public class acaidonortecontroller {
 
     @GetMapping
     public String carregaPaginaListagem(Model model) {
-        model.addAttribute(attributeName:"lista", filmes);
+        model.addAttribute("lista", filmes);
         return "Acai/listagem";
     }
 
     @PostMapping
-    public String cadastrarfilme(DadosCadastroFilme dados) {
+    public String cadastraFilme(DadosCadastroFilme dados) {
         var filme = new Filme(dados);
         filmes.add(filme);
 
